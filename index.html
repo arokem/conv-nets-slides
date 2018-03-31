@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="Tutorial slides for eScience Data Science Summit, April 3rd, 2018">
+		<meta name="author" content="Ariel Rokem">
+
+		<title> Neural Networks </title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/arokem.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+	<div class="reveal">
+	<div class="slides">
+	<section>
+		<img src="img/eScience.png" height="100px" alt="eScience logo" align="middle">
+
+		<h2> Neural networks and deep learning </h2>
+		<br>
+		<p><a href="http://arokem.org">Ariel Rokem</a>,
+		<a href="http://escience.washington.edu">University of Washington eScience Institute</a> </p>
+		<p>  <small>Follow along at: <t><a href="http://arokem.github.io/conv-nets-slides/">http://arokem.github.io/conv-nets-slides/</t></a></small></p>
+		<img src="img/cc-by.png" height="30px" alt="License" align="middle">
+	</section>
+
+	<section>
+		<h2>Machine learning</h2>
+		<p class="fragment">Learning from data</p>
+		<p class="fragment">Features of the data are extracted/engineered</p>
+		<p class="fragment">Training data is used to infer model parameters</p>		
+		<p class="fragment">Test data is used to evaluate accuracy</p>		
+	</section>
+
+	<section>
+	<h2>Artificial neural networks</h2>
+		<p class="fragment">A family of machine learning algorithms</p>
+		<p class="fragment">Biologically inspired</p>
+		<div class="cite">
+				<a href="https://www.nature.com/articles/nature14539">LeCun et al. 2015</a>
+			</div>
+		</section>
+
+	<section>
+
+	<h2>Artificial neural networks</h2>
+		<img src="img/minsky_papert.png">		
+		<div class="cite">Minsky and Papert (1969)</div>
+	</section>
+
+	<section>
+	<h2> Artificial neural networks</h2>
+		<p>A family of machine learning algorithms</p>
+		<p>Biologically inspired</p>
+		<p class="fragment">Implement a cascade of linear/non-linear operations</p>
+		<div class="cite">
+				<a href="https://www.nature.com/articles/nature14539">LeCun et al. 2015</a>
+			</div>
+		</section>
+	
+	<section>
+		<img src="img/simple-network.png">		
+		<div class="cite">
+				<a href="https://www.nature.com/articles/nature14539">LeCun et al. 2015</a>
+			</div>
+		</section>
+
+	<section>
+		<h2> Artificial neural networks</h2>
+		<p>A family of machine learning algorithms</p>
+		<p>Biologically inspired</p>		
+		<p>Implement a cascade of linear/non-linear operations</p>
+		<p class="fragment">Learn by back-propagating the errors through the network</p>
+		<div class="cite">
+			<a href="https://www.nature.com/articles/nature14539">LeCun et al. 2015</a>
+		</div>
+	</section>
+
+	<section>
+		<img src="img/simple-backprop.png">
+		<div class="cite">
+		<a href="https://www.nature.com/articles/nature14539">LeCun et al. 2015</a>
+		</div>				
+	</section>
+
+	<section>
+		<h2> Convolutional networks</h2>
+		<p class="fragment">A way to reduce the number of parameters</p>
+		<p class="fragment">Capitalizes on spatial correlations in images</p>
+		<p class="fragment">Inspired by the mammalian visual system</p>
+
+		<div class="cite">
+			<a href="https://www.nature.com/articles/nature14539">LeCun et al. 2015</a>
+		</div>
+			
+	</section>
+
+	<section>
+			<img src="img/bosking.jpg" height=500>
+
+			<div class="cite">
+					<a href="http://www.jneurosci.org/content/17/6/2112.long">Bosking et al. 1997</a>
+			</div>
+		
+	</section>
+
+	<section>
+		<img src="img/convolution_animation.gif">
+
+		<div class="cite">
+				<a href="https://arxiv.org/abs/1603.07285">Dumoulin and Visin (2016)</a>
+		</div>
+	</section>
+
+	<section>
+		<div style="position: absolute; left:10px; top:10px;">
+		<img src="img/wall.png" height=250px;>
+		</div>
+		<div class="fragment" style="position: absolute; left:370px; top 10px;">
+				<img src="img/horizontal_wall.png" height=220px;>
+		</div>
+		<div class="fragment" style="position: absolute; left:650px;">
+				<img src="img/vertical_wall.png" height=220px;>
+		</div>		
+		</section>
+
+	<section>
+		<img src="img/neural-network.png">
+		<div class=cite>
+			<a href="https://research.google.com/pubs/pub38115.html">Le et al. (2012)</a>
+		</div>
+	</section>
+	
+	<section>
+		<img src="img/imagenet-fig4l.png">
+		<div class=cite>
+		<a href="http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf">Krizhevsky et al. 2012</a>
+		</div>
+	</section>
+
+	<section>
+		<h2>Summary</h2>
+
+	</section>
+
+	<section>
+		<h2>Let's get started!</h2>
+		<h2><a href="https://notebooks.azure.com/arokem/libraries/conv-nets">https://notebooks.azure.com/arokem/libraries/conv-nets</h2></a>
+	</section>
+
+	<section>
+
+			<div style="position:absolute; left: 200px; top:-120px;">
+			<h2>Contact information</h2>
+			</div>
+			<div style="position:absolute; left: 220px; top:-50px;">
+			<img src="img/globe-xxl.png" width="100px;" >
+			<div style="position:absolute; left: 120px; top:40px;">http://arokem.org
+			</div>
+			</div>
+			<div style="position:absolute; left: 220px; top:70px;">
+			<img src="img/email-11-xxl.png" width="100px;" >
+			<div style="position:absolute; left: 120px; top:40px;">arokem@gmail.com
+			</div>
+			</div>
+			<div style="position:absolute; left: 220px; top:190px;">
+			<img src="img/twitter-xxl.png" width="100px;" >
+			<div style="position:absolute; left: 120px; top:40px;">@arokem
+			</div>
+			</div>
+			<div style="position:absolute; left: 220px; top:310px;">
+			<img src="img/github-6-xxl.png" width="100px;" >
+			<div style="position:absolute; left: 120px; top:40px;">github.com/arokem
+			</div>
+			</div>
+
+	</section>
+
+	</div>
+	</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				history: true,
+				controls: false,
+				progress: true,
+				center: true,
+
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
