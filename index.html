@@ -10,6 +10,7 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/arokem.css">
+		<link rel="stylesheet" href="css/custom.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -29,9 +30,9 @@
 	<section>
 		<img src="img/eScience.png" height="100px" alt="eScience logo" align="middle">
 
-		<h2> Neural networks and deep learning </h2>
-		<br>
-		<h4>Northwest Data Science Summit 2019</h4>
+        <h2>Hands-on Introduction to Deep Learning </h2>
+		<h4>OHBM 2019 educational course</h4>
+		<h3>Deep Learning for Human Brain Mapping</h3>
 		<p><a href="http://arokem.org">Ariel Rokem</a>,
 		<a href="http://escience.washington.edu">University of Washington eScience Institute</a> </p>
 		<p>  <small>Follow along at: <t><a href="http://arokem.github.io/conv-nets-slides/">http://arokem.github.io/conv-nets-slides/</t></a></small></p>
@@ -47,120 +48,114 @@
 	</section>
 
 	<section>
-	<h2>Artificial neural networks</h2>
-		<p class="fragment">A family of machine learning algorithms</p>
-		<p class="fragment">Biologically inspired</p>
-		<div class="cite">
-				<a href="https://www.nature.com/articles/nature14539">LeCun et al. 2015</a>
-			</div>
-		</section>
+            <h2>Artificial neural networks</h2>
+            <p class="fragment" data-fragment-index="1">A family of machine learning algorithms</p>
+            <p class="fragment" data-fragment-index="2">Biologically inspired</p>
+            <span class="fragment fade-in">
+            <img src="img/minsky_papert.png" height=250>
+            <br>
+            <cite>Minsky and Papert (1969)</cite>
+            </span>
+        </section>
 
-	<section>
+        <section>
+            <h2>A cascade of linear/non-linear operations</h2>
+            <img src="img/simple-network.png" height=450>
+            <div class="cite">
+                <a href="https://www.nature.com/articles/nature14539">LeCun et al. 2015</a>
+            </div>
+        </section>
 
-	<h2>Artificial neural networks</h2>
-		<img src="img/minsky_papert.png">
-		<div class="cite"><a href="">Minsky and Papert (1969)</a></div>
-	</section>
+        <!-- <section>
+                <h2>Learn by back-propagating the errors</h2>
+                <img src="img/simple-backprop.png" height=450>
+                <div class="cite">
+                    <a href="https://www.nature.com/articles/nature14539">LeCun et al. 2015</a>
+                </div>
+        </section> -->
 
-	<section>
-	<h2> Artificial neural networks</h2>
-		<p>A family of machine learning algorithms</p>
-		<p>Biologically inspired</p>
-		<p class="fragment">Implement a cascade of linear/non-linear operations</p>
-		<div class="cite">
-				<a href="https://www.nature.com/articles/nature14539">LeCun et al. 2015</a>
-			</div>
-		</section>
+        <section>
+                <h2>Learn by back-propagating the errors</h2>
+                <img src="img/nielsen_cost.png" height=300>
+                <div class="cite">
+                    <a href="http://neuralnetworksanddeeplearning.com/chap2.html">Nielsen (2015)</a>
+                </div>
+        </section>
 
-	<section>
-		<img src="img/simple-network.png">
-		<div class="cite">
-				<a href="https://www.nature.com/articles/nature14539">LeCun et al. 2015</a>
-			</div>
-		</section>
+        <section>
+                <h2>Learn by back-propagating the errors</h2>
+                <img src="img/nielsen1.png" height=300>
+                <div class="cite">
+                    <a href="http://neuralnetworksanddeeplearning.com/chap2.html">Nielsen (2015)</a>
+                </div>
+        </section>
 
-	<section>
-		<h2> Artificial neural networks</h2>
-		<p>A family of machine learning algorithms</p>
-		<p>Biologically inspired</p>
-		<p>Implement a cascade of linear/non-linear operations</p>
-		<p class="fragment">Learn by back-propagating the errors through the network</p>
-		<div class="cite">
-			<a href="https://www.nature.com/articles/nature14539">LeCun et al. 2015</a>
-		</div>
-	</section>
+        <section>
+            <h2>For the top layer</h2>
+            <p class="fragment">Change the output of each unit based on how much it affects the current error</p>
+            <p class="fragment">How would the output change if we changed the activitiy in this unit just a little?</p>
+        </section>
 
-	<section>
-		<img src="img/simple-backprop.png">
-		<div class="cite">
-		<a href="https://www.nature.com/articles/nature14539">LeCun et al. 2015</a>
-		</div>
-	</section>
+        <section>
+                <h2>For layer L-1</h2>
+                <p class="fragment">How much would change in each weight affect the activity in layer L?</p>
+                <p class="fragment">Depends on: </p>
+                <li class="fragment">How are the weights from layer L affecting the error?</li>
+                <li class="fragment">How would a change in the weight affect the output of the node it feeds into?</li>
+                <li class="fragment">How active is the node feeding into the weight?</li>
+        </section>
 
-	<section>
-		<h2> Convolutional networks</h2>
-		<p class="fragment">A way to reduce the number of parameters</p>
-		<p class="fragment">Capitalizes on spatial correlations in images</p>
-		<p class="fragment">Inspired by the mammalian visual system</p>
+        <section>
+            <h2>Stochastic Gradient Descent</h2>
+            <p class="fragment">Choose a random small batch from your training data</p>
+            <p class="fragment">Calculate the errors from the top of the network back</p>
+            <p class="fragment">Adjust the errors by a small amount</p>
+            <p class="fragment">Repeat until convergence</p>
+        </section>
 
-		<div class="cite">
-			<a href="https://www.nature.com/articles/nature14539">LeCun et al. 2015</a>
-		</div>
+        <section>
+            <h2> Convolutional networks</h2>
+            <p class="fragment" data-fragment-index="1">Inspired by the visual system</p>
+            <p class="fragment" data-fragment-index="3">Capitalize on spatial correlations in images</p>
+            <div class="row fragment" data-fragment-index="2">
+            <div class="imgcite two-col">
 
-	</section>
+            <img src="img/bosking.jpg" height=400>
+            <cite>
+                    <a href="http://www.jneurosci.org/content/17/6/2112.long">Bosking et al. (1997)</a>
+            </cite>
+            </div>
 
-	<section>
-			<img src="img/bosking.jpg" height=500>
+            <div class="imgcite two-col">
+                <img src="img/convolution_animation.gif" class="row fragment" data-fragment-index="4" height=400>
+                <cite class="row fragment" data-fragment-index="4">
+                        <a href="https://arxiv.org/abs/1603.07285">Dumolin & Visin (2018)</a>
+                </cite>
+            </div>
 
-			<div class="cite">
-					<a href="http://www.jneurosci.org/content/17/6/2112.long">Bosking et al. 1997</a>
-			</div>
+        </section>
 
-	</section>
+        <section>
+                <div style="position: absolute; left:10px; top:10px;">
+                <img src="img/wall.png" height=250px;>
+                </div>
+                <div class="fragment" style="position: absolute; left:370px; top 10px;">
+                        <img src="img/horizontal_wall.png" height=220px;>
+                </div>
+                <div class="fragment" style="position: absolute; left:650px;">
+                        <img src="img/vertical_wall.png" height=220px;>
+                </div>
+        </section>
 
-	<section>
-		<img src="img/convolution_animation.gif">
-
-		<div class="cite">
-				<a href="https://arxiv.org/abs/1603.07285">Dumoulin and Visin (2016)</a>
-		</div>
-	</section>
-
-	<section>
-		<div style="position: absolute; left:10px; top:10px;">
-		<img src="img/wall.png" height=250px;>
-		</div>
-		<div class="fragment" style="position: absolute; left:370px; top 10px;">
-				<img src="img/horizontal_wall.png" height=220px;>
-		</div>
-		<div class="fragment" style="position: absolute; left:650px;">
-				<img src="img/vertical_wall.png" height=220px;>
-		</div>
-		</section>
-
-	<section>
-		<img src="img/neural-network.png">
-		<div class=cite>
-			<a href="https://research.google.com/pubs/pub38115.html">Le et al. (2012)</a>
-		</div>
-	</section>
-
-	<section>
-		<img src="img/imagenet-fig4l.png">
-		<div class=cite>
-		<a href="http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf">Krizhevsky et al. 2012</a>
-		</div>
-	</section>
-
-	<section>
-	<h2>Deep learning software</h2>
-	<img src="./img/software_timeline.png">
-    <div class="cite"><a href="https://mli.github.io/cvpr17/">Mu Li</a></div>
-	</section>
+        <section>
+            <img src="img/imagenet-fig4l.png">
+            <div class=cite>
+                <a href="http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf">Krizhevsky et al. 2012</a>
+            </div>
+        </section>
 
 	<section>
 		<h2>Let's get started!</h2>
-        <h2>https://arokem.github.io/conv-nets</h2>
 	</section>
 
 	<section>
